@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as OutletsRouteImport } from './routes/outlets'
+import { Route as GetAQuoteRouteImport } from './routes/get-a-quote'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ClientToolsRouteImport } from './routes/client-tools'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutletsRoute = OutletsRouteImport.update({
+  id: '/outlets',
+  path: '/outlets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetAQuoteRoute = GetAQuoteRouteImport.update({
+  id: '/get-a-quote',
+  path: '/get-a-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientToolsRoute = ClientToolsRouteImport.update({
+  id: '/client-tools',
+  path: '/client-tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/client-tools': typeof ClientToolsRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
+  '/outlets': typeof OutletsRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/client-tools': typeof ClientToolsRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
+  '/outlets': typeof OutletsRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/client-tools': typeof ClientToolsRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
+  '/outlets': typeof OutletsRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/client-tools'
+    | '/contact'
+    | '/get-a-quote'
+    | '/outlets'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/client-tools'
+    | '/contact'
+    | '/get-a-quote'
+    | '/outlets'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/client-tools'
+    | '/contact'
+    | '/get-a-quote'
+    | '/outlets'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ClientToolsRoute: typeof ClientToolsRoute
+  ContactRoute: typeof ContactRoute
+  GetAQuoteRoute: typeof GetAQuoteRoute
+  OutletsRoute: typeof OutletsRoute
+  ServicesRoute: typeof ServicesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outlets': {
+      id: '/outlets'
+      path: '/outlets'
+      fullPath: '/outlets'
+      preLoaderRoute: typeof OutletsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-a-quote': {
+      id: '/get-a-quote'
+      path: '/get-a-quote'
+      fullPath: '/get-a-quote'
+      preLoaderRoute: typeof GetAQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client-tools': {
+      id: '/client-tools'
+      path: '/client-tools'
+      fullPath: '/client-tools'
+      preLoaderRoute: typeof ClientToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ClientToolsRoute: ClientToolsRoute,
+  ContactRoute: ContactRoute,
+  GetAQuoteRoute: GetAQuoteRoute,
+  OutletsRoute: OutletsRoute,
+  ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
