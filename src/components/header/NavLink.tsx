@@ -19,13 +19,13 @@ export function NavLink({
     <Link
       to={href}
       onClick={onClick}
-      className={`group font-medium transition-colors duration-300 text-sm xl:text-base relative inline-block pb-1 ${
+      className={`group font-medium transition-colors duration-300 text-sm xl:text-xl relative inline-block ${
         isLight ? "text-gray-700" : "text-white"
       }`}
     >
       {label}
       <span
-        className={`absolute bottom-0 left-0 h-0.5 bg-[#E9510E] transition-all duration-300 ${
+        className={`absolute -bottom-1 left-0 h-0.5 bg-[#E9510E] transition-all duration-300 ${
           isActive ? "w-full" : "w-0 group-hover:w-full"
         }`}
       />
