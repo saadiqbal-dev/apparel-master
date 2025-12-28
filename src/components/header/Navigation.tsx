@@ -10,7 +10,12 @@ interface NavigationProps {
   onCloseMegaMenu: () => void;
 }
 
-export function Navigation({ isLight, activeMegaMenu, onMegaMenuToggle, onCloseMegaMenu }: NavigationProps) {
+export function Navigation({
+  isLight,
+  activeMegaMenu,
+  onMegaMenuToggle,
+  onCloseMegaMenu,
+}: NavigationProps) {
   return (
     <nav className="flex flex-col xl:flex-row items-center gap-2 xl:gap-0 w-full xl:w-auto">
       <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 xl:gap-16.25">

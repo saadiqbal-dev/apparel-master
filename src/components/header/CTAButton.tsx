@@ -8,7 +8,13 @@ interface CTAButtonProps {
   onClick?: () => void;
 }
 
-export function CTAButton({ to, label, isLight, className = "", onClick }: CTAButtonProps) {
+export function CTAButton({
+  to,
+  label,
+  isLight,
+  className = "",
+  onClick,
+}: CTAButtonProps) {
   return (
     <Link
       to={to}
