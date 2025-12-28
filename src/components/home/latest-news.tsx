@@ -18,11 +18,11 @@ export default function LatestNews() {
         }}
       >
         <div className="bg-[#E9510E] max-w-[586px] w-full h-[651px] rounded-[12px] relative flex flex-col justify-between py-[80px] px-[53px]">
-          <h2 className="text-white font-inter text-[40px] font-medium leading-tight">
+          <h2 className="text-white font-inter text-[40px] font-medium leading-tight absolute left-[47px] top-[258px]">
             Latest News
           </h2>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 absolute left-[53px] bottom-[79px]">
             <CarouselPrevious
               className="static translate-0 bg-transparent border-white size-[56px] hover:bg-transparent hover:border-white"
               iconClassName="size-[30px]"
@@ -34,35 +34,20 @@ export default function LatestNews() {
           </div>
         </div>
         <div className="absolute bottom-1/2 translate-y-1/2 right-0 max-w-[calc(100vw-603px)] overflow-hidden">
-          <CarouselContent className="overflow-visible gap-[50px]">
-            <CarouselItem className="basis-auto">
+          <CarouselContent className="overflow-visible gap-0">
+            <CarouselItem className="basis-auto pl-[50px]">
               <NewsItem />
             </CarouselItem>
-            <CarouselItem className="basis-auto">
+            <CarouselItem className="basis-auto pl-[50px]">
               <NewsItem />
             </CarouselItem>
-            <CarouselItem className="basis-auto">
+            <CarouselItem className="basis-auto pl-[50px]">
               <NewsItem />
             </CarouselItem>
-            <CarouselItem className="basis-auto">
+            <CarouselItem className="basis-auto pl-[50px]">
               <NewsItem />
             </CarouselItem>
-            <CarouselItem className="basis-auto">
-              <NewsItem />
-            </CarouselItem>
-            <CarouselItem className="basis-auto">
-              <NewsItem />
-            </CarouselItem>
-            <CarouselItem className="basis-auto">
-              <NewsItem />
-            </CarouselItem>
-            <CarouselItem className="basis-auto">
-              <NewsItem />
-            </CarouselItem>
-            <CarouselItem className="basis-auto">
-              <NewsItem />
-            </CarouselItem>
-            <CarouselItem className="basis-auto">
+            <CarouselItem className="basis-auto pl-[50px]">
               <NewsItem />
             </CarouselItem>
           </CarouselContent>

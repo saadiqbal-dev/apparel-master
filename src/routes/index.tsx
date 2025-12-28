@@ -6,6 +6,7 @@ import ProfessionalWorkwear from "@/components/home/professional-workwear";
 import RentalSolutions from "@/components/home/rental-solutions";
 import LatestNews from "@/components/home/latest-news";
 import ClientTestimonials from "@/components/home/client-testimonials";
+import Companies from "@/components/home/companies";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -24,6 +25,7 @@ function RouteComponent() {
           <KiwiHeritage />
           <LatestNews />
           <ClientTestimonials />
+          <Companies />
           <CTA />
         </div>
       </div>

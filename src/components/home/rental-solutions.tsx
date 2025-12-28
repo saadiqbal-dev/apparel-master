@@ -56,7 +56,7 @@ function RentalSolutionCard({ solution }: { solution: RentalSolution }) {
 
       {/* Sliding White Sheet */}
       <div
-        className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out flex flex-col px-10.5 pt-7.5 pb-7 z-0 ${isOpen ? "translate-y-0" : "translate-y-full"} md:translate-y-full md:group-hover:translate-y-0`}
+        className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out flex flex-col px-10.5 pt-7.5 pb-[52px] z-0 ${isOpen ? "translate-y-0" : "translate-y-full"} md:translate-y-full md:group-hover:translate-y-0`}
       >
         <div className="space-y-4">
           <h3 className="text-black font-inter text-xl font-semibold leading-[34px]">
