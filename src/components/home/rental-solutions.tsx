@@ -1,0 +1,91 @@
+import { Link } from "@tanstack/react-router";
+import { Button } from "../ui/button";
+import { rentalSolutions } from "@/data/home/rental-solutions";
+
+export default function RentalSolutions() {
+  return (
+    <div className="bg-[#F7F7F7] py-[126px] pb-[90px]">
+      <div className="px-4 max-w-[1752px] mx-auto space-y-[144px]">
+        <h2 className="text-center font-inter text-[#1A1A1A] text-[44px] font-medium">
+          Our Workwear and Workplace Rental Solutions
+        </h2>
+
+        <div className="grid grid-cols-3 gap-[50px]">
+          {rentalSolutions.map((solution) => (
+            <RentalSolutionCard key={solution.title} solution={solution} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RentalSolutionCard({
+  solution,
+}: {
+  solution: (typeof rentalSolutions)[0];
+}) {
+  return (
+    <div
+      className="w-full rounded-[12px] bg-white overflow-hidden relative group"
+      aria-label={`Learn more about ${solution.title}`}
+    >
+      <img
+        src={solution.image}
+        alt={solution.title}
+        className="w-full h-auto aspect-540/300 object-cover rounded-t-[12px]"
+      />
+      <div className="py-[28px] px-10 flex items-center justify-between pointer-events-none">
+        <h3 className="text-black font-inter text-xl font-semibold leading-[34px]">
+          {solution.title}
+        </h3>
+      </div>
+
+      <div className="absolute right-10 bottom-8.5 transform group-hover:rotate-45 transition-transform duration-300 z-10 pointer-events-none">
+        <PlusIcon />
+      </div>
+
+      {/* Sliding White Sheet */}
+      <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out flex flex-col px-10.5 pt-7.5 pb-7 z-0">
+        <div className="space-y-4">
+          <h3 className="text-black font-inter text-xl font-semibold leading-[34px]">
+            {solution.title}
+          </h3>
+          <p className="text-black font-inter text-base leading-relaxed">
+            {solution.description}
+          </p>
+        </div>
+        <Link to={solution.href} className="mt-auto dark">
+          <Button
+            variant={"hero"}
+            size="hero"
+            className="w-fit px-5 py-2 text-sm"
+          >
+            Find out more
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+    >
+      <rect x="10.2666" width="1.46667" height="22" fill="black" />
+      <rect
+        y="11.7334"
+        width="1.46667"
+        height="22"
+        transform="rotate(-90 0 11.7334)"
+        fill="black"
+      />
+    </svg>
+  );
+}

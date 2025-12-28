@@ -17,7 +17,7 @@ export function VideoBackground({
     const handleScroll = () => {
       const scrollY = window.scrollY;
       // Hide video when scrolled past 80% of viewport height
-      setIsVideoVisible(scrollY < window.innerHeight * 0.8);
+      setIsVideoVisible(scrollY < window.innerHeight * 0.9);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,7 +30,7 @@ export function VideoBackground({
         <iframe
           src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1`}
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           style={{
             width: "177.77777778vh",
             height: "56.25vw",
@@ -52,7 +52,7 @@ export function VideoBackground({
       <iframe
         src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1`}
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
         style={{
           width: "177.77777778vh",
           height: "56.25vw",

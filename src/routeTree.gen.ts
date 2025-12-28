@@ -9,77 +9,77 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as OutletsRouteImport } from './routes/outlets'
-import { Route as GetAQuoteRouteImport } from './routes/get-a-quote'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ClientToolsRouteImport } from './routes/client-tools'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as OutletsIndexRouteImport } from './routes/outlets/index'
+import { Route as GetAQuoteIndexRouteImport } from './routes/get-a-quote/index'
+import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as ClientToolsIndexRouteImport } from './routes/client-tools/index'
+import { Route as AboutIndexRouteImport } from './routes/about/index'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OutletsRoute = OutletsRouteImport.update({
-  id: '/outlets',
-  path: '/outlets',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GetAQuoteRoute = GetAQuoteRouteImport.update({
-  id: '/get-a-quote',
-  path: '/get-a-quote',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClientToolsRoute = ClientToolsRouteImport.update({
-  id: '/client-tools',
-  path: '/client-tools',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutletsIndexRoute = OutletsIndexRouteImport.update({
+  id: '/outlets/',
+  path: '/outlets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetAQuoteIndexRoute = GetAQuoteIndexRouteImport.update({
+  id: '/get-a-quote/',
+  path: '/get-a-quote/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/contact/',
+  path: '/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientToolsIndexRoute = ClientToolsIndexRouteImport.update({
+  id: '/client-tools/',
+  path: '/client-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/client-tools': typeof ClientToolsRoute
-  '/contact': typeof ContactRoute
-  '/get-a-quote': typeof GetAQuoteRoute
-  '/outlets': typeof OutletsRoute
-  '/services': typeof ServicesRoute
+  '/about': typeof AboutIndexRoute
+  '/client-tools': typeof ClientToolsIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/get-a-quote': typeof GetAQuoteIndexRoute
+  '/outlets': typeof OutletsIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/client-tools': typeof ClientToolsRoute
-  '/contact': typeof ContactRoute
-  '/get-a-quote': typeof GetAQuoteRoute
-  '/outlets': typeof OutletsRoute
-  '/services': typeof ServicesRoute
+  '/about': typeof AboutIndexRoute
+  '/client-tools': typeof ClientToolsIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/get-a-quote': typeof GetAQuoteIndexRoute
+  '/outlets': typeof OutletsIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/client-tools': typeof ClientToolsRoute
-  '/contact': typeof ContactRoute
-  '/get-a-quote': typeof GetAQuoteRoute
-  '/outlets': typeof OutletsRoute
-  '/services': typeof ServicesRoute
+  '/about/': typeof AboutIndexRoute
+  '/client-tools/': typeof ClientToolsIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/get-a-quote/': typeof GetAQuoteIndexRoute
+  '/outlets/': typeof OutletsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -103,68 +103,26 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/client-tools'
-    | '/contact'
-    | '/get-a-quote'
-    | '/outlets'
-    | '/services'
+    | '/about/'
+    | '/client-tools/'
+    | '/contact/'
+    | '/get-a-quote/'
+    | '/outlets/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ClientToolsRoute: typeof ClientToolsRoute
-  ContactRoute: typeof ContactRoute
-  GetAQuoteRoute: typeof GetAQuoteRoute
-  OutletsRoute: typeof OutletsRoute
-  ServicesRoute: typeof ServicesRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  ClientToolsIndexRoute: typeof ClientToolsIndexRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+  GetAQuoteIndexRoute: typeof GetAQuoteIndexRoute
+  OutletsIndexRoute: typeof OutletsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/outlets': {
-      id: '/outlets'
-      path: '/outlets'
-      fullPath: '/outlets'
-      preLoaderRoute: typeof OutletsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/get-a-quote': {
-      id: '/get-a-quote'
-      path: '/get-a-quote'
-      fullPath: '/get-a-quote'
-      preLoaderRoute: typeof GetAQuoteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/client-tools': {
-      id: '/client-tools'
-      path: '/client-tools'
-      fullPath: '/client-tools'
-      preLoaderRoute: typeof ClientToolsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -172,17 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outlets/': {
+      id: '/outlets/'
+      path: '/outlets'
+      fullPath: '/outlets'
+      preLoaderRoute: typeof OutletsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-a-quote/': {
+      id: '/get-a-quote/'
+      path: '/get-a-quote'
+      fullPath: '/get-a-quote'
+      preLoaderRoute: typeof GetAQuoteIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client-tools/': {
+      id: '/client-tools/'
+      path: '/client-tools'
+      fullPath: '/client-tools'
+      preLoaderRoute: typeof ClientToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ClientToolsRoute: ClientToolsRoute,
-  ContactRoute: ContactRoute,
-  GetAQuoteRoute: GetAQuoteRoute,
-  OutletsRoute: OutletsRoute,
-  ServicesRoute: ServicesRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  ClientToolsIndexRoute: ClientToolsIndexRoute,
+  ContactIndexRoute: ContactIndexRoute,
+  GetAQuoteIndexRoute: GetAQuoteIndexRoute,
+  OutletsIndexRoute: OutletsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
