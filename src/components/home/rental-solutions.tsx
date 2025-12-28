@@ -1,16 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "../ui/button";
-import { rentalSolutions } from "@/data/home/rental-solutions";
+import {
+  rentalSolutions,
+  type RentalSolution,
+} from "@/data/home/rental-solutions";
+import { useState } from "react";
 
 export default function RentalSolutions() {
   return (
     <div className="bg-[#F7F7F7] py-[126px] pb-[90px]">
-      <div className="px-4 max-w-[1752px] mx-auto space-y-[144px]">
+      <div className="px-5 max-w-[1752px] mx-auto space-y-[144px]">
         <h2 className="text-center font-inter text-[#1A1A1A] text-[44px] font-medium">
           Our Workwear and Workplace Rental Solutions
         </h2>
 
-        <div className="grid grid-cols-3 gap-[50px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[50px]">
           {rentalSolutions.map((solution) => (
             <RentalSolutionCard key={solution.title} solution={solution} />
           ))}
@@ -20,15 +24,18 @@ export default function RentalSolutions() {
   );
 }
 
-function RentalSolutionCard({
-  solution,
-}: {
-  solution: (typeof rentalSolutions)[0];
-}) {
+function RentalSolutionCard({ solution }: { solution: RentalSolution }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div
-      className="w-full rounded-[12px] bg-white overflow-hidden relative group"
+      className="w-full rounded-[12px] bg-white overflow-hidden relative group cursor-pointer md:cursor-default"
       aria-label={`Learn more about ${solution.title}`}
+      onClick={handleClick}
     >
       <img
         src={solution.image}
@@ -41,12 +48,16 @@ function RentalSolutionCard({
         </h3>
       </div>
 
-      <div className="absolute right-10 bottom-8.5 transform group-hover:rotate-45 transition-transform duration-300 z-10 pointer-events-none">
+      <div
+        className={`absolute right-10 bottom-8.5 transform transition-transform duration-300 z-10 pointer-events-none ${isOpen ? "rotate-45" : ""} md:rotate-0 md:group-hover:rotate-45`}
+      >
         <PlusIcon />
       </div>
 
       {/* Sliding White Sheet */}
-      <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out flex flex-col px-10.5 pt-7.5 pb-7 z-0">
+      <div
+        className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out flex flex-col px-10.5 pt-7.5 pb-7 z-0 ${isOpen ? "translate-y-0" : "translate-y-full"} md:translate-y-full md:group-hover:translate-y-0`}
+      >
         <div className="space-y-4">
           <h3 className="text-black font-inter text-xl font-semibold leading-[34px]">
             {solution.title}
@@ -55,7 +66,11 @@ function RentalSolutionCard({
             {solution.description}
           </p>
         </div>
-        <Link to={solution.href} className="mt-auto dark">
+        <Link
+          to={solution.href}
+          className="mt-auto w-fit dark"
+          onClick={(e) => e.stopPropagation()}
+        >
           <Button
             variant={"hero"}
             size="hero"

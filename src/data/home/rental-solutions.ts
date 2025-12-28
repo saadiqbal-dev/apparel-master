@@ -1,4 +1,11 @@
-export const rentalSolutions = [
+export type RentalSolution = {
+  title: string;
+  image: string;
+  description: string;
+  href: string;
+};
+
+export const rentalSolutions: RentalSolution[] = [
   {
     title: "Workshirts & Trousers",
     image: "/images/solutions/workshirts.png",
