@@ -1,5 +1,6 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { Header } from "@/components/header";
+import Footer from "@/components/footer";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -7,11 +8,12 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <div className="font-inter min-h-screen w-full antialiased">
+    <div className="font-inter min-h-screen w-full antialiased flex flex-col">
       <Header />
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }
