@@ -1,11 +1,11 @@
-import { VideoBackground } from "@/components/VideoBackground";
+import { VideoBackground } from "@/components/video-background";
 import { Button } from "@/components/ui/button";
 
 export default function KiwiHeritage() {
   return (
     <div className="relative">
       <div
-        className="absolute dark space-y-11.5 z-10"
+        className="absolute space-y-11.5 z-10"
         style={{
           left: "16.93vw",
           top: "30.23vh",

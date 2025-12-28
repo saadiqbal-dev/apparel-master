@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import CTA from "@/components/home/cta";
-import KiwiHeritage from "@/components/home/KiwiHeritage";
-import Hero from "@/components/home/Hero";
+import KiwiHeritage from "@/components/home/kiwi-heritage";
+import Hero from "@/components/home/hero";
 import ProfessionalWorkwear from "@/components/home/professional-workwear";
 
 export const Route = createFileRoute("/")({

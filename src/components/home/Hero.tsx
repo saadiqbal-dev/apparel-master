@@ -1,4 +1,4 @@
-import { VideoBackground } from "@/components/VideoBackground";
+import { VideoBackground } from "@/components/video-background";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
