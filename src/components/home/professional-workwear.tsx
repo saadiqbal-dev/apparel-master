@@ -9,7 +9,7 @@ export default function ProfessionalWorkwear() {
         className="max-w-215 min-w-0 h-auto aspect-860/626 object-cover rounded-2xl flex-1 basis-0"
       />
       <div className="flex items-start justify-center dark flex-col max-w-161.75 min-w-0 flex-1 basis-0">
-        <div className="w-25 h-1.5 bg-[#E9510E] mb-9" />
+        <div className="w-25 h-1.5 bg-brand mb-9" />
         <h2 className="max-w-[531px] text-black font-inter text-[48px] mb-12.5">
           Professional Workwear, Made Easy.
         </h2>

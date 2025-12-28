@@ -43,6 +43,23 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --font-inter: "Inter", sans-serif;
+
+  /* Brand Colors */
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+
+  /* Backgrounds */
+  --color-dark: var(--dark);
+  --color-light-gray: var(--light-gray);
+  --color-light-gray-alt: var(--light-gray-alt);
+
+  /* Text Colors */
+  --color-heading: var(--heading);
+  --color-meta: var(--meta);
+
+  /* UI Elements */
+  --color-dot-active: var(--dot-active);
+  --color-dot-inactive: var(--dot-inactive);
 }
 
 :root {
@@ -78,6 +95,23 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Brand Colors */
+  --brand: #E9510E;
+  --brand-hover: #D35D2B;
+
+  /* Backgrounds */
+  --dark: #242323;
+  --light-gray: #F7F7F7;
+  --light-gray-alt: #F5F4F4;
+
+  /* Text Colors */
+  --heading: #1A1A1A;
+  --meta: #979595;
+
+  /* UI Elements */
+  --dot-active: #C5C2C2;
+  --dot-inactive: #D9D9D9;
 }
 
 .dark {

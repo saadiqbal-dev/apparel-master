@@ -8,9 +8,9 @@ import { useState } from "react";
 
 export default function RentalSolutions() {
   return (
-    <div className="bg-[#F7F7F7] py-[126px] pb-[90px]">
+    <div className="bg-light-gray py-[126px] pb-[90px]">
       <div className="px-5 max-w-[1752px] mx-auto space-y-[144px]">
-        <h2 className="text-center font-inter text-[#1A1A1A] text-[44px] font-medium">
+        <h2 className="text-center font-inter text-heading text-[44px] font-medium">
           Our Workwear and Workplace Rental Solutions
         </h2>
 

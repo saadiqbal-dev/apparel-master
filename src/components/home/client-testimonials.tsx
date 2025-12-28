@@ -61,7 +61,7 @@ export default function ClientTestimonials() {
             <div
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`size-2.5 rounded-full cursor-pointer ${current === index + 1 ? "bg-[#C5C2C2]" : "bg-[#D9D9D9]"}`}
+              className={`size-2.5 rounded-full cursor-pointer ${current === index + 1 ? "bg-dot-active" : "bg-dot-inactive"}`}
             />
           ))}
         </div>
@@ -87,13 +87,13 @@ function ClientTestimonial({
 }: ClientTestimonialProps) {
   return (
     <div className="flex items-center justify-center w-fit mx-auto">
-      <div className="flex flex-col -mr-[55px] z-10 rounded-[6px] bg-[#F5F4F4] pb-[65px] pt-[52px] px-[73px] max-w-[720px]">
+      <div className="flex flex-col -mr-[55px] z-10 rounded-[6px] bg-light-gray-alt pb-[65px] pt-[52px] px-[73px] max-w-[720px]">
         <QuoteIcon />
         <p className="text-black font-inter text-[28px] leading-9.5 pt-4.5 pb-6">
           {testimonial}
         </p>
         <div className="flex gap-5">
-          <div className="w-1.5 h-self-stretch bg-[#E9510E]" />
+          <div className="w-1.5 h-self-stretch bg-brand" />
           <div className="text-black font-inter text-lg leading-6">
             <p className="font-semibold">{name}</p>
             {title && <p>{title}</p>}

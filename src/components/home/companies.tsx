@@ -30,7 +30,7 @@ const companies = [
 export default function Companies() {
   return (
     <div>
-      <h2 className="text-center font-inter text-[#1A1A1A] text-[44px] font-medium pb-[134px]">
+      <h2 className="text-center font-inter text-heading text-[44px] font-medium pb-[134px]">
         Companies we proudly work with
       </h2>
       <Marquee className="mb-[157px]">
