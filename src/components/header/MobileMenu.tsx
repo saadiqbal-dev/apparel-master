@@ -29,14 +29,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           : "-translate-y-4 opacity-0 pointer-events-none"
       }`}
     >
-      <div className="px-5 pt-[11px] pb-10">
+      <div className="px-5 pt-2.75 pb-10">
         {/* Header with Logo and Close Button */}
         <div className="flex items-center justify-between mb-13.5">
           <Link to="/" onClick={onClose}>
             <img
               src="/images/apparel-master-logo.png"
               alt="Apparel Master Logo"
-              className="w-[137px] h-[68px] aspect-137/68 ms-2"
+              className="w-34.25 h-17 aspect-137/68 ms-2"
             />
           </Link>
           <button

@@ -30,10 +30,10 @@ const companies = [
 export default function Companies() {
   return (
     <div>
-      <h2 className="text-center font-inter mx-auto text-heading leading-8.5 max-w-[353px] md:max-w-none text-[28px] md:text-[44px] font-medium pb-[60px] md:pb-[134px]">
+      <h2 className="text-center font-inter mx-auto text-heading leading-8.5 max-w-88.25 md:max-w-none text-[28px] md:text-[44px] font-medium pb-15 md:pb-33.5">
         Companies we proudly work with
       </h2>
-      <Marquee className="mb-[80px] md:mb-[157px]">
+      <Marquee className="mb-20 md:mb-39.25">
         <MarqueeContent>
           {companies.map((company, index) => (
             <MarqueeItem

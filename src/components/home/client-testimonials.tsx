@@ -24,7 +24,7 @@ export default function ClientTestimonials() {
   }, [api]);
 
   return (
-    <div className="bg-white md:pt-12 lg:pt-[159px] w-full pb-[37px] lg:pb-[134px]">
+    <div className="bg-white md:pt-12 lg:pt-39.75 w-full pb-9.25 lg:pb-33.5">
       <Carousel
         opts={{
           loop: true,
@@ -57,7 +57,7 @@ export default function ClientTestimonials() {
             />
           </CarouselItem>
         </CarouselContent>
-        <div className="hidden lg:flex justify-center items-center gap-6.5 pt-[57px]">
+        <div className="hidden lg:flex justify-center items-center gap-6.5 pt-14.25">
           {Array.from({ length: count }).map((_, index) => (
             <div
               key={index}
@@ -88,9 +88,9 @@ function ClientTestimonial({
 }: ClientTestimonialProps) {
   return (
     <div className="flex items-center justify-center w-full mx-auto max-w-[100vw] overflow-hidden">
-      <div className="flex flex-col px-10 lg:-mr-[250px] w-full max-w-full xl:-mr-[150px] 2xl:-mr-[55px] xl:px-[73px] pt-[52px] pb-[60px] xl:pb-[65px] z-10 rounded-[6px] bg-light-gray-alt  lg:max-w-[550px] 2xl:max-w-[720px] shrink-0">
+      <div className="flex flex-col px-10 lg:-mr-62.5 w-full max-w-full xl:-mr-37.5 2xl:-mr-13.75 xl:px-18.25 pt-13 pb-15 xl:pb-16.25 z-10 rounded-[6px] bg-light-gray-alt lg:max-w-137.5 2xl:max-w-180 shrink-0">
         <QuoteIcon />
-        <p className="text-black font-inter text-2xl leading-8 xl:text-[28px] xl:leading-9.5 pt-[18px] xl:pt-4.5 pb-[25px] xl:pb-6">
+        <p className="text-black font-inter text-2xl leading-8 xl:text-[28px] xl:leading-9.5 pt-4.5 xl:pt-4.5 pb-6.25 xl:pb-6">
           {testimonial}
         </p>
         <div className="flex gap-5">
@@ -105,7 +105,7 @@ function ClientTestimonial({
       <img
         src={image}
         alt={name}
-        className="hidden lg:block w-full h-auto lg:max-w-[650px] xl:max-w-[891px] aspect-891/673 object-cover rounded-[6px] shrink-0"
+        className="hidden lg:block w-full h-auto lg:max-w-162.5 xl:max-w-222.75 aspect-891/673 object-cover rounded-[6px] shrink-0"
       />
     </div>
   );

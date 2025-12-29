@@ -4,6 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
+import tailwindCanonicalClasses from "eslint-plugin-tailwind-canonical-classes";
 
 export default defineConfig([
   globalIgnores(["dist"]),
@@ -18,6 +19,17 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    plugins: {
+      "tailwind-canonical-classes": tailwindCanonicalClasses,
+    },
+    rules: {
+      "tailwind-canonical-classes/tailwind-canonical-classes": [
+        "warn",
+        {
+          cssPath: "./src/index.css",
+        },
+      ],
     },
   },
 ]);

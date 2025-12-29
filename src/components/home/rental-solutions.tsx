@@ -8,13 +8,13 @@ import { useState } from "react";
 
 export default function RentalSolutions() {
   return (
-    <div className="bg-light-gray pt-10 md:py-[126px] pb-8.5 md:pb-[90px]">
-      <div className="px-5 max-w-[1752px] mx-auto space-y-11 md:space-y-[144px]">
+    <div className="bg-light-gray pt-10 md:py-31.5 pb-8.5 md:pb-22.5">
+      <div className="px-5 max-w-438 mx-auto space-y-11 md:space-y-36">
         <h2 className="text-center font-inter mx-auto text-heading max-w-[320px] md:max-w-none text-[28px] leading-8.5 md:text-[44px] font-medium">
           Our Workwear and Workplace Rental Solutions
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[30px] md:gap-[50px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7.5 md:gap-12.5">
           {rentalSolutions.map((solution) => (
             <RentalSolutionCard key={solution.title} solution={solution} />
           ))}
@@ -33,17 +33,17 @@ function RentalSolutionCard({ solution }: { solution: RentalSolution }) {
 
   return (
     <div
-      className="w-full rounded-[8px] md:rounded-[12px] bg-white overflow-hidden relative group cursor-pointer md:cursor-default"
+      className="w-full rounded-xl md:rounded-2xl bg-white overflow-hidden relative group cursor-pointer md:cursor-default"
       aria-label={`Learn more about ${solution.title}`}
       onClick={handleClick}
     >
       <img
         src={solution.image}
         alt={solution.title}
-        className="w-full h-auto aspect-353/196 md:aspect-540/300 object-cover rounded-t-[8px] md:rounded-t-[12px]"
+        className="w-full h-auto aspect-353/196 md:aspect-540/300 object-cover rounded-t-xl md:rounded-t-2xl"
       />
-      <div className="py-5 px-5.5 md:py-[28px] md:px-10 flex items-center justify-between pointer-events-none">
-        <h3 className="text-black font-inter md:text-xl font-semibold leading-[34px]">
+      <div className="py-5 px-5.5 md:py-7 md:px-10 flex items-center justify-between pointer-events-none">
+        <h3 className="text-black font-inter md:text-xl font-semibold leading-8.5">
           {solution.title}
         </h3>
       </div>
@@ -59,7 +59,7 @@ function RentalSolutionCard({ solution }: { solution: RentalSolution }) {
         className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out flex flex-col px-5.5 md:px-10.5 pt-5 md:pt-7.5 pb-8 md:pb-[52px] z-0 ${isOpen ? "translate-y-0" : "translate-y-full"} md:translate-y-full md:group-hover:translate-y-0`}
       >
         <div className="space-y-3 md:space-y-4">
-          <h3 className="text-black font-inter text-lg md:text-xl font-semibold leading-7 md:leading-[34px]">
+          <h3 className="text-black font-inter text-lg md:text-xl font-semibold leading-7 md:leading-8.5">
             {solution.title}
           </h3>
           <p className="text-black font-inter text-sm md:text-base leading-relaxed">

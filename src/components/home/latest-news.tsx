@@ -44,30 +44,30 @@ export default function LatestNews() {
   return (
     <div className="max-w-screen overflow-hidden">
       <Carousel
-        className="bg-dark py-[60px] lg:pt-[103px] lg:pb-[109px] w-full lg:px-5 lg:pl-[100px] lg:pr-0 relative"
+        className="bg-dark py-15 lg:pt-25.75 lg:pb-27.25 w-full lg:px-5 lg:pl-25 lg:pr-0 relative"
         opts={{
           loop: true,
           align: "start",
         }}
       >
         {/* Mobile: Heading only */}
-        <h2 className="text-white font-inter text-center text-[28px] leading-[34px] font-medium mb-10 lg:hidden">
+        <h2 className="text-white font-inter text-center text-[28px] leading-8.5 font-medium mb-10 lg:hidden">
           Latest News
         </h2>
 
         {/* Desktop: Brand box with heading and controls */}
-        <div className="hidden lg:flex bg-brand max-w-[586px] w-full h-[651px] rounded-[12px] relative flex-col justify-between py-[80px] px-[53px]">
-          <h2 className="text-white font-inter text-[40px] font-medium leading-tight absolute left-[47px] top-[258px]">
+        <div className="hidden lg:flex bg-brand max-w-146.5 w-full h-162.75 rounded-2xl relative flex-col justify-between py-20 px-13.25">
+          <h2 className="text-white font-inter text-[40px] font-medium leading-tight absolute left-11.75 top-64.5">
             Latest News
           </h2>
 
-          <div className="flex items-center gap-5 absolute left-[53px] bottom-[79px]">
+          <div className="flex items-center gap-5 absolute left-13.25 bottom-19.75">
             <CarouselPrevious
-              className="static translate-0 bg-transparent border-white hover:text-white text-white size-[56px] hover:bg-transparent hover:border-white"
+              className="static translate-0 bg-transparent border-white hover:text-white text-white size-14 hover:bg-transparent hover:border-white"
               iconClassName="size-[30px]"
             />
             <CarouselNext
-              className="static translate-0 bg-white border-white text-brand size-[56px] hover:bg-white hover:border-white"
+              className="static translate-0 bg-white border-white text-brand size-14 hover:bg-white hover:border-white"
               iconClassName="size-[30px]"
             />
           </div>
@@ -79,7 +79,7 @@ export default function LatestNews() {
             {newsItems.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="basis-[75%] pl-5 sm:basis-1/2 md:basis-1/3 lg:basis-auto lg:pl-[50px]"
+                className="basis-[75%] pl-5 sm:basis-1/2 md:basis-1/3 lg:basis-auto lg:pl-12.5"
               >
                 <NewsItem
                   image={item.image}
@@ -94,11 +94,11 @@ export default function LatestNews() {
         {/* Mobile: Centered controls below carousel */}
         <div className="flex items-center justify-center gap-5 mt-10 lg:hidden">
           <CarouselPrevious
-            className="static translate-0 bg-transparent border-white text-white hover:text-white size-[56px] hover:bg-transparent hover:border-white"
+            className="static translate-0 bg-transparent border-white text-white hover:text-white size-14 hover:bg-transparent hover:border-white"
             iconClassName="size-[30px]"
           />
           <CarouselNext
-            className="static translate-0 bg-white border-white size-[56px] hover:bg-white hover:border-white"
+            className="static translate-0 bg-white border-white size-14 hover:bg-white hover:border-white"
             iconClassName="size-[30px]"
           />
         </div>
@@ -117,15 +117,15 @@ function NewsItem({ image, category, title }: NewsItemProps) {
   return (
     <Link
       to="/"
-      className="bg-white max-h-[408px] lg:max-w-[340px] lg:max-h-[492px] rounded-[12px] block"
+      className="bg-white max-h-102 lg:max-w-85 lg:max-h-123 rounded-2xl block"
     >
       <img
         src={image}
         alt={title}
-        className="w-full h-[204px] lg:h-auto aspect-281.951/204 lg:aspect-340/246 object-cover rounded-t-[12px]"
+        className="w-full h-51 lg:h-auto aspect-281.951/204 lg:aspect-340/246 object-cover rounded-t-2xl"
       />
 
-      <div className="px-6 lg:px-7 pt-3.5 lg:pt-4.5 pb-2.5 lg:pb-5 h-full max-h-[204px] lg:max-h-[246px] flex flex-col">
+      <div className="px-6 lg:px-7 pt-3.5 lg:pt-4.5 pb-2.5 lg:pb-5 h-full max-h-51 lg:max-h-61.5 flex flex-col">
         <p className="text-meta font-inter text-[15.134px] leading-[30.268px] lg:text-sm lg:leading-7 font-medium">
           {category}
         </p>

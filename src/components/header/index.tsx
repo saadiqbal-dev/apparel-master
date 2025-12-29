@@ -21,7 +21,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-[90px] xl:h-41.25">
+    <header className="fixed top-0 left-0 right-0 z-50 h-22.5 xl:h-41.25">
       {/* Gradient background layer */}
       <div
         className="absolute inset-0 transition-opacity duration-300 ease-in-out"
@@ -40,13 +40,13 @@ export function Header() {
         }}
       />
 
-      <div className="relative flex items-center justify-between max-w-438 mx-auto h-full py-[11px] ps-[28px] pe-[43px] xl:py-0 xl:px-4 gap-2 xl:gap-0">
+      <div className="relative flex items-center justify-between max-w-438 mx-auto h-full py-2.75 ps-7 pe-10.75 xl:py-0 xl:px-4 gap-2 xl:gap-0">
         {/* Logo */}
         <Link to="/" className="shrink-0" onClick={handleCloseMegaMenu}>
           <img
             src="/images/apparel-master-logo.png"
             alt="Apparel Master Logo"
-            className="w-[137px] h-[68px] aspect-137/68 xl:w-60.5 xl:h-[119.67px] xl:aspect-[242.00/119.67]"
+            className="w-34.25 h-17 aspect-137/68 xl:w-60.5 xl:h-[119.67px] xl:aspect-[242.00/119.67]"
           />
         </Link>
 
