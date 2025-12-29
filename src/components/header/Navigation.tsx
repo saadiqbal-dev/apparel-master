@@ -2,6 +2,7 @@ import { routes } from "./constants";
 import { NavLink } from "./NavLink";
 import { NavButton } from "./NavButton";
 import { CTAButton } from "./CTAButton";
+import { PhoneButton } from "../PhoneButton";
 
 interface NavigationProps {
   isLight: boolean;
@@ -48,13 +49,7 @@ export function Navigation({
           onClick={onCloseMegaMenu}
         />
 
-        <CTAButton
-          to="/contact"
-          label="Click for 0800 Number"
-          isLight={isLight}
-          className="xl:ml-17.5"
-          onClick={onCloseMegaMenu}
-        />
+        <PhoneButton isLight={isLight} className="xl:ml-17.5" />
       </div>
     </nav>
   );

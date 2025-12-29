@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
 import Leaf from "@/assets/leaf.svg";
 import { useState } from "react";
+import { PhoneButton } from "./PhoneButton";
 
 export default function Footer() {
   return (
@@ -43,9 +43,7 @@ export default function Footer() {
             Submit an Enquiry
           </h3>
           {/* Click for 0800 button */}
-          <Button variant="hero" size="hero" className="w-fit mb-9">
-            Click for 0800 number
-          </Button>
+          <PhoneButton variant="hero" className="w-fit mb-9" />
           {/* Social Icons */}
           <div className="flex items-center gap-9 mb-35">
             <a href="/facebook" aria-label="Facebook">
@@ -131,9 +129,7 @@ export default function Footer() {
               className="aspect-69/34 max-h-34"
             />
 
-            <Button variant="hero" size="hero" className="w-fit">
-              Click for 0800 number
-            </Button>
+            <PhoneButton variant="hero" className="w-fit" />
           </div>
 
           <div className="flex flex-col justify-between">
