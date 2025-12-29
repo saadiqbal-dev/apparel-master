@@ -18,7 +18,7 @@ export function Navigation({
 }: NavigationProps) {
   return (
     <nav className="flex flex-col xl:flex-row items-center gap-2 xl:gap-0 w-full xl:w-auto">
-      <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 xl:gap-16.25">
+      <ul className="flex flex-wrap justify-center gap-2 md:gap-4 xl:gap-10 2xl:gap-16.25">
         {routes.map((route) => (
           <li key={route.href}>
             {route.hasMegaMenu ? (

@@ -24,10 +24,11 @@ export default function ClientTestimonials() {
   }, [api]);
 
   return (
-    <div className="bg-white pt-[159px] w-full pb-[134px]">
+    <div className="bg-white md:pt-12 lg:pt-[159px] w-full pb-[37px] lg:pb-[134px]">
       <Carousel
         opts={{
           loop: true,
+          align: "center",
         }}
         setApi={setApi}
         plugins={[
@@ -42,7 +43,7 @@ export default function ClientTestimonials() {
             <ClientTestimonial
               name="Mike Fulcher"
               company="Mike's Chainsaws & Outdoor Power Ltd."
-              testimonial="The service is always excellent and the quality of the laundry garments is consistently top-notch, reliable, and truly exceeds expectations every single time without fail or compromise.”"
+              testimonial="The service is always excellent and the quality of the laundry garments is consistently top-notch, reliable, and truly exceeds expectations every single time without fail or compromise."
               image="/images/testimonials/tractor.png"
             />
           </CarouselItem>
@@ -51,12 +52,12 @@ export default function ClientTestimonials() {
               name="Damian Southorn"
               company="Refining NZ"
               title="Industrial Fire Brigade Chief"
-              testimonial="Apparelmaster consistently ensures that our team is well-presented, providing high-quality uniforms that help us maintain a sharp, professional appearance at all times.”"
+              testimonial="Apparelmaster consistently ensures that our team is well-presented, providing high-quality uniforms that help us maintain a sharp, professional appearance at all times."
               image="/images/testimonials/fireman.jpg"
             />
           </CarouselItem>
         </CarouselContent>
-        <div className="flex justify-center items-center gap-6.5 pt-[57px]">
+        <div className="hidden lg:flex justify-center items-center gap-6.5 pt-[57px]">
           {Array.from({ length: count }).map((_, index) => (
             <div
               key={index}
@@ -86,15 +87,15 @@ function ClientTestimonial({
   image,
 }: ClientTestimonialProps) {
   return (
-    <div className="flex items-center justify-center w-fit mx-auto">
-      <div className="flex flex-col -mr-[55px] z-10 rounded-[6px] bg-light-gray-alt pb-[65px] pt-[52px] px-[73px] max-w-[720px]">
+    <div className="flex items-center justify-center w-full mx-auto max-w-[100vw] overflow-hidden">
+      <div className="flex flex-col px-10 lg:-mr-[250px] w-full max-w-full xl:-mr-[150px] 2xl:-mr-[55px] xl:px-[73px] pt-[52px] pb-[60px] xl:pb-[65px] z-10 rounded-[6px] bg-light-gray-alt  lg:max-w-[550px] 2xl:max-w-[720px] shrink-0">
         <QuoteIcon />
-        <p className="text-black font-inter text-[28px] leading-9.5 pt-4.5 pb-6">
+        <p className="text-black font-inter text-2xl leading-8 xl:text-[28px] xl:leading-9.5 pt-[18px] xl:pt-4.5 pb-[25px] xl:pb-6">
           {testimonial}
         </p>
         <div className="flex gap-5">
           <div className="w-1.5 h-self-stretch bg-brand" />
-          <div className="text-black font-inter text-lg leading-6">
+          <div className="text-black font-inter text-[15px] leading-5 xl:text-lg xl:leading-6 font-normal">
             <p className="font-semibold">{name}</p>
             {title && <p>{title}</p>}
             <p>{company}</p>
@@ -104,7 +105,7 @@ function ClientTestimonial({
       <img
         src={image}
         alt={name}
-        className="w-full h-auto max-w-[891px] max-h-[673px] aspect-891/673 object-cover rounded-[6px]"
+        className="hidden lg:block w-full h-auto lg:max-w-[650px] xl:max-w-[891px] aspect-891/673 object-cover rounded-[6px] shrink-0"
       />
     </div>
   );

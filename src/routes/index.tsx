@@ -14,10 +14,10 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="relative">
       <Hero />
       {/* Scrollable content that reveals on scroll */}
-      <div className="relative z-20">
+      <div className="relative -mt-16 sm:-mt-24 z-20 lg:mt-0">
         <img src="/curve-desktop.svg" alt="" className="w-full block" />
         <div className="bg-white min-h-screen">
           <ProfessionalWorkwear />
