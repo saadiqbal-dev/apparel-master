@@ -16,6 +16,7 @@ import { Route as GetAQuoteIndexRouteImport } from './routes/get-a-quote/index'
 import { Route as ContactIndexRouteImport } from './routes/contact/index'
 import { Route as ClientToolsIndexRouteImport } from './routes/client-tools/index'
 import { Route as AboutIndexRouteImport } from './routes/about/index'
+import { Route as ServicesWorkplaceFloorMatsIndexRouteImport } from './routes/services/workplace/floor-mats/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,12 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
   path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesWorkplaceFloorMatsIndexRoute =
+  ServicesWorkplaceFloorMatsIndexRouteImport.update({
+    id: '/services/workplace/floor-mats/',
+    path: '/services/workplace/floor-mats/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +68,7 @@ export interface FileRoutesByFullPath {
   '/get-a-quote': typeof GetAQuoteIndexRoute
   '/outlets': typeof OutletsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/services/workplace/floor-mats': typeof ServicesWorkplaceFloorMatsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +78,7 @@ export interface FileRoutesByTo {
   '/get-a-quote': typeof GetAQuoteIndexRoute
   '/outlets': typeof OutletsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/services/workplace/floor-mats': typeof ServicesWorkplaceFloorMatsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +89,7 @@ export interface FileRoutesById {
   '/get-a-quote/': typeof GetAQuoteIndexRoute
   '/outlets/': typeof OutletsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/services/workplace/floor-mats/': typeof ServicesWorkplaceFloorMatsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +101,7 @@ export interface FileRouteTypes {
     | '/get-a-quote'
     | '/outlets'
     | '/services'
+    | '/services/workplace/floor-mats'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +111,7 @@ export interface FileRouteTypes {
     | '/get-a-quote'
     | '/outlets'
     | '/services'
+    | '/services/workplace/floor-mats'
   id:
     | '__root__'
     | '/'
@@ -109,6 +121,7 @@ export interface FileRouteTypes {
     | '/get-a-quote/'
     | '/outlets/'
     | '/services/'
+    | '/services/workplace/floor-mats/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +132,7 @@ export interface RootRouteChildren {
   GetAQuoteIndexRoute: typeof GetAQuoteIndexRoute
   OutletsIndexRoute: typeof OutletsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
+  ServicesWorkplaceFloorMatsIndexRoute: typeof ServicesWorkplaceFloorMatsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/workplace/floor-mats/': {
+      id: '/services/workplace/floor-mats/'
+      path: '/services/workplace/floor-mats'
+      fullPath: '/services/workplace/floor-mats'
+      preLoaderRoute: typeof ServicesWorkplaceFloorMatsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +204,7 @@ const rootRouteChildren: RootRouteChildren = {
   GetAQuoteIndexRoute: GetAQuoteIndexRoute,
   OutletsIndexRoute: OutletsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
+  ServicesWorkplaceFloorMatsIndexRoute: ServicesWorkplaceFloorMatsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
