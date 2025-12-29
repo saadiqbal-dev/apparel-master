@@ -8,8 +8,9 @@ export default function KiwiHeritage() {
 
       <div className="absolute left-17 top-31.5 md:left-[16.93vw] md:top-[30.23vh] z-10">
         <div className="space-y-6 md:space-y-11.5">
-          <h2 className="font-inter text-white max-w-60.75 text-2xl leading-7.5 md:text-[48px] md:leading-normal md:max-w-[29.43vw]">
-            100% New Zealand owned and operated.
+          <h2 className="font-inter text-white text-2xl leading-7.5 md:text-[48px] md:leading-normal">
+            100% New Zealand
+            <br /> owned and operated.
           </h2>
           <Button variant={"hero"} size="hero">
             Discover Our Kiwi Heritage
