@@ -24,7 +24,7 @@ export default function ClientTestimonials() {
   }, [api]);
 
   return (
-    <div className="bg-white md:pt-12 lg:pt-39.75 w-full pb-9.25 lg:pb-33.5">
+    <div className="bg-white lg:pt-39.75 w-full pb-9.25 lg:pb-33.5">
       <Carousel
         opts={{
           loop: true,

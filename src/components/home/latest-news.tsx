@@ -129,7 +129,7 @@ function NewsItem({ image, category, title }: NewsItemProps) {
         <p className="text-meta font-inter text-[15.134px] leading-[30.268px] lg:text-sm lg:leading-7 font-medium">
           {category}
         </p>
-        <h3 className="font-inter text-black text-[21.62px] leading-[30.268px] lg:text-xl lg:leading-7 font-normal hover:underline">
+        <h3 className="font-inter text-black text-[21.62px] md:text-lg leading-[30.268px] lg:text-xl lg:leading-7 font-normal hover:underline">
           {title}
         </h3>
 
