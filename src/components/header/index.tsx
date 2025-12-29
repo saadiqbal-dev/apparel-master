@@ -3,10 +3,12 @@ import { Link } from "@tanstack/react-router";
 import { useHeaderScroll } from "./useHeaderScroll";
 import { Navigation } from "./Navigation";
 import { MegaMenu } from "./MegaMenu";
+import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   const isScrolled = useHeaderScroll();
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isLight = isScrolled || !!activeMegaMenu;
 
@@ -49,7 +51,11 @@ export function Header() {
         </Link>
 
         {/* Mobile Menu Icon */}
-        <button className="xl:hidden" aria-label="Menu">
+        <button
+          className="xl:hidden"
+          aria-label="Menu"
+          onClick={() => setIsMobileMenuOpen(true)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -102,6 +108,12 @@ export function Header() {
       {activeMegaMenu && (
         <MegaMenu activeMenu={activeMegaMenu} onClose={handleCloseMegaMenu} />
       )}
+
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
     </header>
   );
 }
